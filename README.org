@@ -1,0 +1,23 @@
+sub parts client
+
+* これなん
+  起動後にふぁぼられた自分のツイートのなかで、ふぁぼられ数が多いツイートを順番に表示します。
+  いわゆるfavstarプラグインではありません（このプラグインには永続化がないため）。
+
+* 要件
+  mikutter 0.2.2.1150 以降
+
+* インストール方法
+  : mkdir ~/.mikutter/plugin && git clone git://github.com/toshia/most_faved.git ~/.mikutter/plugin/most_faved
+
+* 使いかた
+  Most というタブが追加されています。ふぁぼられたらこのタブにそのツイートが表示されるでしょう。
+  ツイートはふぁぼられる度に順位が再計算され、最大でベスト200がこのリストに表示されます。
+
+* 拡張
+  most_faved_add イベントを発生させると、ツイートをタブに強制的に登録することができます。
+#+BEGIN_SRC ruby
+	Plugin.call(:most_faved_add, [Messages, ...])
+#+END_SRC
+
+  Messageを配列で指定してください。
