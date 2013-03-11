@@ -13,11 +13,3 @@ sub parts client
 * 使いかた
   Most というタブが追加されています。ふぁぼられたらこのタブにそのツイートが表示されるでしょう。
   ツイートはふぁぼられる度に順位が再計算され、最大でベスト200がこのリストに表示されます。
-
-* 拡張
-  most_faved_add イベントを発生させると、ツイートをタブに強制的に登録することができます。
-#+BEGIN_SRC ruby
-	Plugin.call(:most_faved_add, [Messages, ...])
-#+END_SRC
-
-  Messageを配列で指定してください。

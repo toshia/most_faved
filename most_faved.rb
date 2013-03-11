@@ -13,7 +13,7 @@ Plugin.create :most_faved do
       timeline(:most_faved) << message end
   end
 
-  on_most_faved_add do |messages|
-    timeline(:most_faved) << messages
+  on_message_modified do |message|
+    timeline(:most_faved) << message if message.from_me? and not message.favorited_by.empty?
   end
 end
